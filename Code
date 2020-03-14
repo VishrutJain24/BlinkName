@@ -1,0 +1,110 @@
+// ------------
+// Blink an LED
+// ------------
+
+/*-------------
+Every program based on Wiring (programming language used by Arduino, and Particle devices) has two essential parts:
+setup - runs once at the beginning of your program
+loop - runs continuously over and over
+
+This program will blink an led on and off every second.
+It blinks the D7 LED on your Particle device. If you have an LED wired to D0, it will blink that LED as well.
+
+-------------*/
+// First, we're going to make some variables.
+#define MORSE_DASH 100
+#define MORSE_DOT 500
+ // Instead of writing D7 over and over again, we'll write led1
+int led1 = D7; 
+// Having declared these variables, let's move on to the setup function.
+// The setup function is a standard part of any microcontroller program.
+// It runs only once when the device boots up or is reset.
+
+void setup() {
+
+  // We are going to tell our device that D0 and D7 (which we named led1 and led2 respectively) are going to be output
+  // (That means that we will be sending voltage to them, rather than monitoring voltage that comes from them)
+
+  // It's important you do this here, inside the setup() function rather than outside it or in the loop function.
+
+  pinMode(led1, OUTPUT);
+
+}
+
+void loop() {
+  // To blink the LED, first we'll turn it on...
+  digitalWrite(led1, HIGH);
+  // We'll leave it on for 1 second...
+  delay(1000);
+  //V
+    digitalWrite(led1, HIGH);
+        delay(MORSE_DOT);
+    digitalWrite(led1, LOW);
+        delay(MORSE_DOT);
+    digitalWrite(led1, HIGH);
+        delay(MORSE_DOT);
+    digitalWrite(led1, LOW);
+        delay(MORSE_DASH);
+    digitalWrite(led1, HIGH);
+    
+  //I
+    digitalWrite(led1, HIGH);
+        delay(MORSE_DOT);
+    digitalWrite(led1, LOW);
+        delay(MORSE_DOT);
+    digitalWrite(led1, HIGH);
+    
+    //S
+    digitalWrite(led1, HIGH);
+        delay(MORSE_DOT);
+    digitalWrite(led1, LOW);
+        delay(MORSE_DOT);
+    digitalWrite(led1, HIGH);
+        delay(MORSE_DOT);
+    digitalWrite(led1, LOW);
+    
+    //H
+    digitalWrite(led1, HIGH);
+        delay(MORSE_DOT);
+    digitalWrite(led1, LOW);
+        delay(MORSE_DOT);
+    digitalWrite(led1, HIGH);
+        delay(MORSE_DOT);
+    digitalWrite(led1, LOW);
+        delay(MORSE_DOT);
+    digitalWrite(led1, HIGH);
+    
+    //R
+    digitalWrite(led1, HIGH);
+        delay(MORSE_DOT);
+    digitalWrite(led1, LOW);
+        delay(MORSE_DASH);
+    digitalWrite(led1, HIGH);
+        delay(MORSE_DOT);
+    digitalWrite(led1, LOW);
+    
+    //U
+    digitalWrite(led1, HIGH);
+        delay(MORSE_DOT);
+    digitalWrite(led1, LOW);
+        delay(MORSE_DOT);
+    digitalWrite(led1, HIGH);
+        delay(MORSE_DASH);
+    digitalWrite(led1, LOW);
+    
+    //T
+    digitalWrite(led1, HIGH);
+        delay(MORSE_DASH);
+    digitalWrite(led1, LOW);
+        
+
+  // Then we'll turn it off...
+  digitalWrite(led1, LOW);
+
+
+  // Wait 1 second...
+  delay(5000);
+
+  // And repeat!
+}
+
