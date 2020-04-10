@@ -1,0 +1,31 @@
+	Written by: Vishrut Jain
+	*/
+	
+
+	int TMP36_SENSOR = A4;
+	int Delay = 50000; 
+	
+
+	 
+	double Temp()
+	{
+	    int tempValue = analogRead(TMP36_SENSOR);
+	    return ((tempValue - 0.5) / 100.0)
+	    
+	}
+	
+
+	// initialises the sensor
+	void setup()
+	{
+	    pinMode(TMP36_SENSOR, INPUT);
+	}
+	
+
+	
+	void loop()
+	{
+	
+	    delay(Delay);
+	}
+
